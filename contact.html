@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ArthikaX</title>
+    <meta name="description"
+        content="Get in touch with ArthikaX team. Report bugs, request features, or ask questions about the digital Khata Book app.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F67B34">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #F67B34;
+            --primary-hover: #D65612;
+            --accent: #FF8A3D;
+            --secondary: #1C1C1C;
+            --neutral: #6B6E63;
+            --light-bg: #F5F5F5;
+            --card-bg: #FFFFFF;
+            --text-color: #1C1C1C;
+            --border: #E0E0E0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --secondary: #F5F5F5;
+            --light-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #F5F5F5;
+            --border: #444444;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.95;
+            font-size: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-hover);
+            transform: translateX(-5px);
+        }
+
+        .content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .contact-card {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(246, 123, 52, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-card a {
+            color: var(--text-color);
+            text-decoration: none;
+            word-break: break-all;
+            font-size: 0.95rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
+        }
+
+        .contact-card p {
+            color: var(--neutral);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .faq-section {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .faq-answer {
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(246, 123, 52, 0.1), rgba(246, 123, 52, 0.05));
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .highlight-box strong {
+            color: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--neutral);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(246, 123, 52, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(246, 123, 52, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Contact Us</h1>
+            <p>We're Here to Help!</p>
+        </header>
+
+        <div class="content">
+            <p>
+                Have questions, feedback, or need support? We'd love to hear from you! ArthikaX is continuously
+                improving based on user feedback, and your input is valuable to us.
+            </p>
+
+            <div class="highlight-box">
+                <strong>📧 Quick Response:</strong> We typically respond to all inquiries within 24-48 hours. For urgent
+                issues, please mention "URGENT" in your subject line.
+            </div>
+
+            <h2>Get in Touch</h2>
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email Support</h3>
+                <a href="mailto:easyassistance@zohomail.in">easyassistance@zohomail.in</a>
+                <p>For general inquiries, bug reports, and feature requests</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🌐</div>
+                <h3>Website</h3>
+                <a href="https://arthixa.com" target="_blank" rel="noopener noreferrer">arthixa.com</a>
+                <p>Visit our app and explore features</p>
+            </div>
+        </div>
+
+        <h2>Bug Reporting Guidelines</h2>
+        <p>If you've encountered a bug or technical issue, please include:</p>
+        <ol>
+            <li><strong>Description:</strong> Clear description of the problem</li>
+            <li><strong>Steps to Reproduce:</strong> How to recreate the issue</li>
+            <li><strong>Expected Behavior:</strong> What should have happened</li>
+            <li><strong>Actual Behavior:</strong> What actually happened</li>
+            <li><strong>Device/Browser:</strong> Your device type, browser name and version</li>
+            <li><strong>Screenshots:</strong> If applicable, attach screenshots</li>
+        </ol>
+
+        <h2>Feature Requests</h2>
+        <p>
+            We welcome feature suggestions! When requesting a new feature:
+        </p>
+        <ul>
+            <li>Describe the feature and its benefits</li>
+            <li>Explain your use case (how it would help you)</li>
+            <li>Check if it aligns with ArthikaX's privacy-first philosophy</li>
+            <li>Submit via email</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">❓ How do I back up my data?</div>
+                <div class="faq-answer">
+                    ArthikaX stores all data locally on your device. To back up, use the PDF export feature to save
+                    reports. For manual backup, your browser's data export tools can be used, but we DO NOT provide
+                    cloud backup to maintain privacy.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ I forgot my PIN. Can you recover it?</div>
+                <div class="faq-answer">
+                    No, we CANNOT recover your PIN as it's stored encrypted on your device. For security reasons, if
+                    you forget your PIN, you'll need to reset the app (which will delete all data). We recommend
+                    noting your PIN somewhere secure.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Does ArthikaX work on iOS/iPhone?</div>
+                <div class="faq-answer">
+                    Yes! ArthikaX is a Progressive Web App (PWA) that works on all devices with modern browsers,
+                    including iOS/iPhone. Use Safari to access the app and add it to your home screen for app-like
+                    experience.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Can I sync data across multiple devices?</div>
+                <div class="faq-answer">
+                    Currently, ArthikaX does NOT support cloud sync to maintain complete privacy. All data stays on
+                    your device. You can export data as PDF from one device and manually import/re-enter on another
+                    device.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Is my business data safe?</div>
+                <div class="faq-answer">
+                    Absolutely! Your data never leaves your device. We use AES-256 encryption for sensitive data and
+                    offer PIN lock protection. Since we never see or store your data on servers, your privacy is
+                    100% guaranteed.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ How can I contribute to ArthikaX?</div>
+                <div class="faq-answer">
+                    ArthikaX is open source! You can contribute by reporting bugs, suggesting features, improving
+                    documentation. We welcome community contributions!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Do you provide professional support or customization?</div>
+                <div class="faq-answer">
+                    ArthikaX is a free, community-driven project. While we provide general support via email and
+                    GitHub, we do not currently offer paid professional support or custom development. However,
+                    since it's open source, you're free to fork and customize it yourself!
+                </div>
+            </div>
+        </div>
+
+        <h2>Response Time Expectations</h2>
+        <ul>
+            <li><strong>Email Inquiries:</strong> 24-48 hours</li>
+            <li>
+            <li><strong>Feature Requests:</strong> Acknowledged within a week; implementation depends on complexity
+                and priority</li>
+            <li><strong>Bug Reports:</strong> Critical bugs addressed within days; minor issues in future updates
+            </li>
+        </ul>
+
+        <div class="highlight-box" style="margin-top: 30px;">
+            <strong>💡 Before Contacting:</strong> Please check the <a href="./about.html"
+                style="color: var(--primary); font-weight: 600;">About page</a> and these FAQs first. Many common
+            questions are already answered there!
+        </div>
+
+        <h2>Business Inquiries</h2>
+        <p>
+            For partnership opportunities, media inquiries, or other business-related questions, please email us at
+            <a href="mailto:easyassistance@zohomail.in"
+                style="color: var(--primary); font-weight: 600;">easyassistance@zohomail.in</a> with "Business Inquiry"
+            in
+            the subject line.
+        </p>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="copyrightYear"></span> Arthixa. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auto-sync theme from main app (no toggle button)
+        const html = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+        } else {
+            html.removeAttribute('data-theme');
+        }
+
+        // Auto-update copyright year
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ArthikaX</title>
+    <meta name="description"
+        content="Learn about ArthikaX - The free, offline-first digital Khata Book for small businesses. Our mission, features, and technology.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F67B34">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #F67B34;
+            --primary-hover: #D65612;
+            --accent: #FF8A3D;
+            --secondary: #1C1C1C;
+            --neutral: #6B6E63;
+            --light-bg: #F5F5F5;
+            --card-bg: #FFFFFF;
+            --text-color: #1C1C1C;
+            --border: #E0E0E0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --secondary: #F5F5F5;
+            --light-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #F5F5F5;
+            --border: #444444;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-hover);
+            transform: translateX(-5px);
+        }
+
+        .content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--text-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(246, 123, 52, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--neutral);
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(246, 123, 52, 0.1), rgba(246, 123, 52, 0.05));
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+
+        .highlight-box strong {
+            color: var(--primary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tech-badge {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--neutral);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(246, 123, 52, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(246, 123, 52, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>About ArthikaX</h1>
+            <p>Your Trusted Digital Khata Book for Business</p>
+        </header>
+
+        <div class="content">
+            <h2>Our Mission</h2>
+            <p>
+                ArthikaX is built with a simple yet powerful mission: <strong>To empower small businesses and
+                    entrepreneurs with a free, secure, and privacy-focused digital ledger system</strong> that works
+                without any internet dependency.
+            </p>
+            <p>
+                We believe that financial record-keeping should be accessible to everyone, regardless of their technical
+                expertise or internet connectivity. ArthikaX bridges the gap between traditional paper-based khata books
+                and modern digital solutions.
+            </p>
+
+            <div class="highlight-box">
+                <strong>🔐 Privacy-First Philosophy:</strong> Your business data is YOUR data. We designed ArthikaX to
+                work 100% offline, ensuring that your financial records never leave your device. No cloud sync, no data
+                collection, no tracking. Complete privacy, guaranteed.
+            </div>
+
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📒</div>
+                    <h3>Digital Khata Book</h3>
+                    <p>Maintain party-wise credit/debit ledgers digitally, replacing traditional paper registers.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Daily Collection</h3>
+                    <p>Track daily cash collections with denomination counting and automatic total calculation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Business Reports</h3>
+                    <p>Generate instant reports with party balances, transaction history, and summaries.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>PIN Security</h3>
+                    <p>Protect your sensitive business data with AES-256 encryption and PIN lock.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multi-Currency</h3>
+                    <p>Support for 50+ currencies and country-specific denominations for global businesses.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Multiple Profiles</h3>
+                    <p>Manage multiple businesses or separate personal/professional accounts independently.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>PWA Technology</h3>
+                    <p>Install as native app on any device - works on Android, iOS, Windows, Mac, Linux.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Dark Mode</h3>
+                    <p>Eye-friendly dark theme for comfortable usage in low-light environments.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>PDF Export</h3>
+                    <p>Export professional invoices, reports, and receipts as PDF documents.</p>
+                </div>
+            </div>
+
+            <h2>Why Choose ArthikaX?</h2>
+            <ul>
+                <li><strong>100% Free:</strong> No hidden fees, no premium tiers, no subscriptions. Completely free
+                    forever.</li>
+                <li><strong>Works Offline:</strong> No internet required. Perfect for areas with limited connectivity.
+                </li>
+                <li><strong>Privacy Guaranteed:</strong> Your data never leaves your device. No servers, no cloud, no
+                    tracking.</li>
+                <li><strong>Easy to Use:</strong> Intuitive interface designed for users of all technical levels.</li>
+                <li><strong>Multi-Language:</strong> Supports multiple languages including English, Hindi, and Bengali.
+                </li>
+                <li><strong>Cross-Platform:</strong> Works on any device with a modern web browser.</li>
+                <li><strong>Open Source:</strong> Transparent code available for community review and contributions.
+                </li>
+                <li><strong>Regular Updates:</strong> Continuously improved based on user feedback.</li>
+            </ul>
+
+            <h2>Technology Stack</h2>
+            <p>ArthikaX is built using modern web technologies to ensure performance, security, and reliability:</p>
+
+            <div class="tech-stack">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript (ES6+)</span>
+                <span class="tech-badge">Progressive Web App (PWA)</span>
+                <span class="tech-badge">Service Workers</span>
+                <span class="tech-badge">IndexedDB</span>
+                <span class="tech-badge">localStorage</span>
+                <span class="tech-badge">Web Crypto API</span>
+                <span class="tech-badge">jsPDF</span>
+                <span class="tech-badge">Responsive Design</span>
+            </div>
+
+            <h3>Architecture Highlights:</h3>
+            <ul>
+                <li><strong>Client-Side Only:</strong> All logic runs on your device, no server required</li>
+                <li><strong>Offline-First:</strong> Cached for instant loading and offline access</li>
+                <li><strong>Encrypted Storage:</strong> Sensitive data encrypted with AES-256</li>
+                <li><strong>Zero Dependencies:</strong> No external API calls during operation</li>
+                <li><strong>Optimized Performance:</strong> Fast loading and smooth interactions</li>
+            </ul>
+
+            <h2>Our Story</h2>
+            <p>
+                ArthikaX was created by <strong>Arthixa</strong>, a team passionate about building practical,
+                privacy-focused tools for small businesses and individuals. We recognized the need for a digital khata
+                book solution that doesn't compromise on privacy or require constant internet connectivity.
+            </p>
+            <p>
+                Drawing inspiration from traditional business ledgers (बही-खाता, খাতা বই) and modern digital
+                conveniences, we built ArthikaX to be the perfect bridge between the two worlds.
+            </p>
+
+            <h2>Version Information</h2>
+            <p>
+                <strong>Current Version:</strong> 2.4.0<br>
+                <strong>Release Date:</strong> February 2026<br>
+                <strong>License:</strong> Open Source<br>
+                <strong>Platform:</strong> Progressive Web Application (PWA)
+            </p>
+
+            <h2>Open Source & Community</h2>
+            <p>
+                ArthikaX is open-source software. We believe in transparency and community collaboration. You can:
+            </p>
+            <ul>
+                <li>Contact us via email for support and feedback</li>
+                <li>Report bugs or request features via email</li>
+                <li>Contribute code improvements or translations</li>
+                <li>Fork the project for your own use</li>
+            </ul>
+
+            <h2>Contact & Support</h2>
+            <p>
+                Have questions, feedback, or need assistance? We'd love to hear from you!
+            </p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:easyassistance@zohomail.in"
+                        style="color: var(--primary);">easyassistance@zohomail.in</a></li>
+                <li><strong>Website:</strong> <a href="https://arthixa.com" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);">arthixa.com</a></li>
+            </ul>
+
+            <div class="highlight-box" style="margin-top: 30px;">
+                <strong>Thank you for choosing ArthikaX!</strong> We're committed to helping you manage your business
+                records efficiently, securely, and privately. Your success is our success.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="copyrightYear"></span> Arthixa. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auto-sync theme from main app (no toggle button)
+        const html = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+        } else {
+            html.removeAttribute('data-theme');
+        }
+
+        // Auto-update copyright year
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
