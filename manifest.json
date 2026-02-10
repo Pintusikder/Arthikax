@@ -3,10 +3,16 @@
   "short_name": "ArthikaX",
   "start_url": "./index.html",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "background_color": "#F5F5F5",
   "theme_color": "#F36C21",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
   "scope": "./",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "icon-192.png",
@@ -17,11 +23,25 @@
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "description": "Best free offline Khata Book app for small business. Digital Udhar Bahi Khata, Credit Debit Ledger without internet.",
-  "categories": ["business", "finance", "productivity"],
+  "description": "Best free offline Khata Book app for small business. Digital Udhar Bahi Khata, Credit Debit Ledger without internet. Track Income, Expense, Daily Cash, Party Ledger with AES-256 encryption. Supports 50+ currencies.",
+  "categories": [
+    "business",
+    "finance",
+    "productivity"
+  ],
+  "lang": "en-US",
+  "dir": "ltr",
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
   "screenshots": [
     {
       "src": "screenshot-1.png",
@@ -44,14 +64,46 @@
       "short_name": "Entry",
       "description": "Add a new transaction",
       "url": "./index.html#entry",
-      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "View History",
       "short_name": "History",
       "description": "View transaction history",
       "url": "./index.html#history",
-      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Daily Collection",
+      "short_name": "Daily",
+      "description": "Quick cash collection entry",
+      "url": "./index.html#daily",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
-  ]
+  ],
+  "share_target": {
+    "action": "./index.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
