@@ -12,7 +12,7 @@
 
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.highperformanceformat.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.highperformanceformat.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>ArthikaX - Best Free Khata Book App | Udhar Bahi Khata | Business Ledger 2025</title>
     <meta name="description"
@@ -6453,11 +6453,15 @@ Download App: https://arthixa.com    `;
         // PERFORMANCE MONITORING
         // =========================================
         window.addEventListener('load', () => {
-            // Log performance metrics
-            if (window.performance && window.performance.timing) {
-                const perfData = window.performance.timing;
-                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                console.log(`⚡ Page loaded in ${pageLoadTime}ms`);
+            // Log performance metrics using modern API
+            if (window.performance && window.performance.getEntriesByType) {
+                const navigationTiming = window.performance.getEntriesByType('navigation')[0];
+                if (navigationTiming) {
+                    const pageLoadTime = navigationTiming.loadEventEnd - navigationTiming.fetchStart;
+                    if (pageLoadTime > 0) {
+                        console.log(`⚡ Page loaded in ${Math.round(pageLoadTime)}ms`);
+                    }
+                }
             }
         });
     </script>
