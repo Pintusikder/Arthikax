@@ -8,12 +8,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="ArthikaX - Digital Khata Book">
-    <meta name="mobile-web-app-capable" content="yes">
-
     <!-- Security Headers -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.highperformanceformat.com https://*.highperformanceformat.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://kettledroopingcontinuation.com https://*.highperformanceformat.com; connect-src 'self' https://www.highperformanceformat.com https://*.highperformanceformat.com https://kettledroopingcontinuation.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <title>ArthikaX - Best Free Khata Book App | Udhar Bahi Khata | Business Ledger 2025</title>
     <meta name="description"
         content="Best free offline Khata Book app for small business. Digital Udhar Bahi Khata, Credit Debit Ledger, Daily Cash Book, Money Manager without internet. Download Bahi Khata app now!">
@@ -108,10 +107,6 @@
     <!-- Manifest Link -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="./icon-512.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./icon-192.png">
-    <link rel="shortcut icon" href="./icon-192.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3289,6 +3284,7 @@
 
     <script>
         // PWA Install Prompt Logic
+        let deferredPrompt;
         const installBanner = document.getElementById('pwa-install-banner');
         const installBtn = document.getElementById('installBtn');
         const closePrompt = document.getElementById('closePrompt');
@@ -6453,15 +6449,11 @@ Download App: https://arthixa.com    `;
         // PERFORMANCE MONITORING
         // =========================================
         window.addEventListener('load', () => {
-            // Log performance metrics using modern API
-            if (window.performance && window.performance.getEntriesByType) {
-                const navigationTiming = window.performance.getEntriesByType('navigation')[0];
-                if (navigationTiming) {
-                    const pageLoadTime = navigationTiming.loadEventEnd - navigationTiming.fetchStart;
-                    if (pageLoadTime > 0) {
-                        console.log(`⚡ Page loaded in ${Math.round(pageLoadTime)}ms`);
-                    }
-                }
+            // Log performance metrics
+            if (window.performance && window.performance.timing) {
+                const perfData = window.performance.timing;
+                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`⚡ Page loaded in ${pageLoadTime}ms`);
             }
         });
     </script>
